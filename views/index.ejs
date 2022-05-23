@@ -4,54 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/StyleSheet.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/StyleSheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap" rel="stylesheet">
     <title>Время работы станков</title>
-    <script src="actionScript.js"></script>
+    <script src="/js/actionScript.js"></script>
 </head>
 
-<body onload="onLoadBody()">
-    <button onclick="current_query()" title="Выгрузить данные с сервера. (на сервере данные обновляются каждую 53 секунду)" class="but_update"> обновить данные </button>
-    <div id="loadServer" class="loadServer">
-        <img src="loading.svg" class="iconAnimatedStyle">
-        <p>Выгружаем таблицу, подождите</p>
-    </div>
-    <p id="p_current_date" class="p_date">
-        Данные на 
-    </p>
-    <p id="p_update_date" class="p_updateDate">
-        обновление было в 
-    </p>
-    <div class="div_post">
-        <table id="current_table" class="main-table">
-        </table>
-    </div>
-    <div class="div_date">
-        <p class="p_date">Выберите дату</p>
-        <p id="err" class="errorLabel"></p>
-        <div style="margin-top: 15px;">
-            <input class="dateInput" onchange="calendarChange(true)" min="2021-12-01" max="2022-01-17" type="date" id="startDate">
-            -
-            <input class="dateInput" onchange="calendarChange(false)" type="date" id="endDate">
-            <!-- <button id="but_createTable" class="but_createTable" onclick="createTable()"> Получить таблицу </button> -->
-        </div>
-    </div>
-    <div class="div_post">
-        <p class="p_updateDate" id="historyTable_date"></p>
-        <table id="main_table" class="main-table">
-            
-        </table>
-    </div>
-
-    <div id="my_modal" class="modal">
-        <div class="modal_content">
-            <img src="loading.svg" class="iconAnimatedStyle">
-            <p>Выгружаем таблицу, подождите</p>
-        </div>
-    </div>
+<body>
+    <h3 style="font-family: 'Roboto Flex', sans-serif;">it's work!</h3>
 </body>
 </html>
 
