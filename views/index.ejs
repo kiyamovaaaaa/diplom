@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="rus">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/css/StyleSheet.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap" rel="stylesheet">
-    <title>Время работы станков</title>
-    <script src="/js/actionScript.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/css/StyleSheet.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap" rel="stylesheet">
+        <title>Вход</title>
+        <script src="/js/indexScript.js"></script>
+    </head>
 
-<body>
-    <h3 style="font-family: 'Roboto Flex', sans-serif;">it's work!</h3>
-</body>
+    <body>
+        <div class="panel_div">
+            <img src="/img/Daimler.png" class="logo_img"/>
+            <!-- <h3 style="font-family: 'Roboto Flex', sans-serif;">Пожалуйста, авторизуйтесь</h3> -->
+            <p id="_errLabel_p" class="errLabel_p"></p>
+            <input id="_log_input" class='logPas_input' placeholder="Логин" style="margin-bottom: 20px;" onclick="vVErrorLabel('')"/>
+            <input id="_pass_input" class='logPas_input' type="password" placeholder="Пароль" style="margin-bottom: 39px;" onclick="vVErrorLabel('')"/>
+            <div class="succ_div">
+                <button class="ok_button" onclick="vRLoginAndPasswordCheck()">Войти</button>
+            </div>
+        </div>
+    </body>
 </html>
 
  
