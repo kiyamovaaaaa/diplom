@@ -52,6 +52,11 @@ html {
     border: 1px solid #845EC2;
 }
 
+input:focus {
+    outline: none !important;
+    border: 1px solid #845EC2;
+}
+
 .succ_div {
     width: 451px;
 }
@@ -66,6 +71,7 @@ html {
     border: 1px solid #845EC2;
     border-radius: 10px;
     color: white;
+    cursor: pointer;
     font-size: 14px;
     font-weight: bold;
     font-family: 'Roboto Flex', sans-serif;
@@ -88,4 +94,372 @@ html {
     color: red;
     font-size: 14px;
     font-family: 'Roboto Flex', sans-serif;
+}
+
+.modalBack_div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalFront_div {
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    width: 360px;
+    padding: 45px;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingLabel_p {
+    font-size: 14px;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+.queryErrorFront_div {
+    background-color: #FF4242;
+    display: flex;
+    border-radius: 10px;
+    width: 360px;
+    padding: 45px;
+    justify-content: center;
+    align-items: center;
+}
+
+.anyErrorFront_div {
+    background-color: #ffffff;
+    display: flex;
+    border-radius: 10px;
+    width: 300px;
+    border: 1px solid #FF4242;
+    padding: 45px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.queryErrorLabel_p {
+    font-size: 14px;
+    font-family: 'Roboto Flex', sans-serif;
+    color: white;
+    font-weight: bold;
+}
+
+.anyErrorHeader_p {
+    font-size: 14px;
+    font-family: 'Roboto Flex', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.anyErrorLabel_p {
+    font-size: 14px;
+    font-family: 'Roboto Flex', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: 100;
+}
+
+.redButton_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    padding: 12px 27px;
+    background: #FF4242;
+    border: 1px solid #FF4242;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+.redButton_button:hover {
+    background-color: #df2525;
+}
+
+.redButton_button:focus {
+    outline: none !important;
+    border: 1px solid #FF4242;
+}
+
+.redButton_button:active {
+    background-color: #db2222;
+}
+
+.greyButton_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    padding: 12px 27px;
+    background: #ebebeb;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+.greyButton_button:hover {
+    background-color: #c9c9c9;
+}
+
+.greyButton_button:focus {
+    outline: none !important;
+    border: 1px solid #7c7c7c;
+}
+
+.greyButton_button:active {
+    background-color: #b3b3b3;
+}
+
+.userRoleName_p {
+    margin: 0px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 14px;
+    color: #979797;
+}
+
+.userName_p {
+    margin: 0px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.ava_img {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    margin-right: 15px;
+}
+
+.userInfo_div {
+    bottom: 0px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 120px;
+    background: #F1F1F1;
+    width: 100%;
+    justify-content: center;
+}
+
+.vklad_p{
+    margin: 0px;
+    margin-top: 6px;
+    padding: 15px;
+    font-size: 18px;
+    background: #ffffff;
+    width: 220px;
+    padding-left: 35px;
+    cursor: pointer;
+    font-family: 'Roboto Flex', sans-serif;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.vklad_p:hover {
+    background: #f1f1f1;
+}
+
+.selectVklad_p {
+    margin: 0px;
+    padding: 15px;
+    font-size: 18px;
+    background: #eceef3;
+    width: 220px;
+    padding-left: 35px;
+    font-weight: bold;
+    font-family: 'Roboto Flex', sans-serif;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.menu_div {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100% - 35px);
+    padding-top: 35px;
+    left: 0px;
+    position: absolute;
+    width: 340px;
+}
+
+.menuButtons_div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-end;
+}
+
+.logoInPanel_img {
+    width: 210px;
+    height: 70px;
+    margin-bottom: 45px;
+}
+
+.main_div {
+    background-color: #eceef3;
+    height: calc(100% - 140px);
+    width: calc(100% - 340px - 140px);
+    left: 340px;
+    padding: 70px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.table_div {
+    background-color: white;
+    height: 60vh;
+    width: 60vw;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.tableScroll_div {
+    overflow: auto;
+    height: 100%;
+}
+
+.docRows_div {
+    margin-bottom: 25px;
+}
+
+::-webkit-scrollbar {
+    width: 11px;
+    height: 7px;            /* ширина scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;        /* цвет дорожки */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #845ec2;
+    border-radius: 20px;
+}
+
+th {
+    width: 100px;
+    border-bottom: 2px solid #ECEEF3;
+    margin: 0px;
+    padding: 24px 23px;
+    position: sticky;
+    top: 0;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 14px;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+td {
+    color: #250000;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 14px;
+    padding: 24px 23px;
+    white-space: nowrap;
+}
+
+table {
+    border-spacing: 0px;
+}
+
+.modalWindowFront_div {
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    min-width: 740px;
+    padding: 45px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.modalWindowHeaderRows_div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modalWindowHeader_p {
+    margin: 0px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.modalWindowStatud_p {
+    margin: 0px;
+    font-family: 'Roboto Flex', sans-serif;
+    color: #00C844;
+    font-size: 12px;
+}
+
+.modalWindowMetaText_p {
+    margin: 0px;
+    margin-right: 7px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 100;
+}
+
+.modalWindowInfoText_p {
+    margin: 0px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 700;
+}
+
+input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px 33px;
+    width: 385px;
+    height: 50px;
+    background: #ECEEF3;
+    border-radius: 10px;
+    border: 1px solid #ECEEF3;
+    /* font-size: 14px; */
+    font-size: 14px;
+    /* font-family: 'Roboto'; */
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 400;
+}
+
+p {
+    font-size: 14px;
+    /* font-family: 'Roboto'; */
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+tr:hover {
+    background-color: #F9F9F9;
+}
+
+tr {
+    cursor: pointer;
+}
+
+.trHeader {
+    cursor: auto;
+}
+
+.trHeader:hover {
+    background-color: white;
 }

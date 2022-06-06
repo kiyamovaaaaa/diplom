@@ -58,6 +58,26 @@ app.use(express.static('public'));
         res.send(_blResult);
     });
 
+    app.get("/orders", function (req, res){
+        let _strToken= req.query.token;
+        let _strLogin = rRStrLogin(_strToken);
+        let _strName = ObjMainDate['profile'][_strLogin]['name'];
+        let _strPatronymic = ObjMainDate['profile'][_strLogin]['patronymic'];
+        let _strSurname = ObjMainDate['profile'][_strLogin]['surname'];
+        let _strRoleId = ObjMainDate['profile'][_strLogin]['role'];
+        let _strRoleName = ObjMainDate['manualRole'][_strRoleId];
+
+        res.render("orders.ejs", {str_Name: _strName, str_Patronymic: _strPatronymic, str_Surname: _strSurname, str_RoleName: _strRoleName, str_RoleId: _strRoleId});
+    });
+
+    app.get("/getOrders", function (req, res){
+        res.send(ObjMainDate["orders"]);
+    });
+
+    app.get("/getManualProduct", function (req, res){
+        res.send(ObjMainDate["manualProduct"]);
+    });
+
 //--------------------------------------------------------------------- обработка запросов 
 
 
@@ -172,5 +192,12 @@ app.use(express.static('public'));
 
         return false;
     }
+
+    function rRStrLogin(strAuth) {
+        let _strBuff = Buffer.from(strAuth, 'base64');
+        let _strUserToken = _strBuff.toString('utf-8');
+        return _strUserToken.split(':')[0].replace(/[.]/g,'');
+    }
+
 
 //---------------------------------------------------------------------------------------- функции

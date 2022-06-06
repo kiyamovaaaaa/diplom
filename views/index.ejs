@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/img/icon.png" type="image/png">
         <link rel="stylesheet" type="text/css" href="/css/StyleSheet.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +22,25 @@
             <input id="_pass_input" class='logPas_input' type="password" placeholder="Пароль" style="margin-bottom: 39px;" onclick="vVErrorLabel('')"/>
             <div class="succ_div">
                 <button class="ok_button" onclick="vRLoginAndPasswordCheck()">Войти</button>
+            </div>
+        </div>
+        <div id="_modalBack_div" class="modalBack_div" style="display: none;">
+            <div class="modalFront_div">
+                <p id="_loadingLabel_p" class="loadingLabel_p">Подождите, думаем...</p>
+            </div>
+        </div>
+        <div id="_queryErrorBack_div" class="modalBack_div" style="display: none;">
+            <div class="queryErrorFront_div">
+                <p id="_queryErrorLabel_p" class="queryErrorLabel_p">Во время выполнения запроса произошла ошибка</p>
+            </div>
+        </div>
+        <div id="_anyErrorBack_div" class="modalBack_div" style="display: none;">
+            <div class="anyErrorFront_div">
+                <p id="_anyErrorHeader_p" class="anyErrorHeader_p">Ошибка!</p>
+                <p id="_anyErrorLabel_p" class="anyErrorLabel_p">Произошла неизвестная ошибка! Пожалуйста проверьте соединение с интернетом.</p>
+                <button id="_anyErrorCancel_button" class="redButton_button">
+                    Отмена
+                </button>
             </div>
         </div>
     </body>
