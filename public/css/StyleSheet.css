@@ -57,6 +57,11 @@ input:focus {
     border: 1px solid #845EC2;
 }
 
+select:focus {
+    outline: none !important;
+    border: 1px solid #845EC2;
+}
+
 .succ_div {
     width: 451px;
 }
@@ -462,4 +467,26 @@ tr {
 
 .trHeader:hover {
     background-color: white;
+}
+
+select {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px 33px;
+    height: 58px;
+    background: #DADFEA;
+    border-radius: 10px;
+    border: 1px solid #DADFEA;
+    font-size: 14px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 400;
+}
+
+@media print {
+    /* здесь будут стили для печати */
+    .ok_button, .greyButton_button, .redButton_button {
+        display: none;
+        z-index: -1;
+    }
 }

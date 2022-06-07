@@ -78,6 +78,70 @@ app.use(express.static('public'));
         res.send(ObjMainDate["manualProduct"]);
     });
 
+    app.get("/testUpdate", function (req, res){
+        let _test = FBDataBase.ref('/main/profile');
+        // let _test2 = _test.child("user3@gmailcom");
+        _test.child("user3@gmailcom").set({
+            "name": "Альберт",
+            "password": "qwerty",
+            "patronymic": "Саакашвилевич",
+            "role": "1",
+            "surname": "Попуп"
+        });
+        let _updateDataBase = FBDataBase.ref('/main');
+        _updateDataBase.on('value', (snapshot) => {
+            const _unDATA = snapshot.val();
+            ObjMainDate = _unDATA;
+        });
+        res.send(ObjMainDate);
+    });
+
+    app.get("/deleteOrders", function (req, res){
+        let _FB = FBDataBase.ref('/main/orders');
+        _FB.child(req.query.orderId).remove();
+        
+        let _updateDataBase = FBDataBase.ref('/main');
+        _updateDataBase.on('value', (snapshot) => {
+            const _unDATA = snapshot.val();
+            ObjMainDate = _unDATA;
+        });
+        res.send("success");
+    });
+
+    app.get("/updateAddOrder", function (req, res){
+        let _FB = FBDataBase.ref('/main/orders');
+        let _arrOrders;
+        let _numLength = 0;
+        let _numIndex;
+        _FB.on('value', (snapshot) => {
+            const _unDATA = snapshot.val();
+            _arrOrders = _unDATA;
+        });
+        _numLength = _arrOrders.length;
+
+        if(req.query.addIndex != -1) _numIndex = req.query.addIndex;
+        else _numIndex = _numLength;
+
+        _FB.child(_numIndex).set({
+            "FIO": req.query.FIO,
+            "Tel": req.query.Tel,
+            "cost": req.query.cost,
+            "dateReg": req.query.dateReg,
+            "dateRel": req.query.dateRel,
+            "product": req.query.product,
+            "qty": req.query.qty,
+            "status": req.query.status,
+            "sum": req.query.sum,
+        });
+        
+        let _updateDataBase = FBDataBase.ref('/main');
+        _updateDataBase.on('value', (snapshot) => {
+            const _unDATA = snapshot.val();
+            ObjMainDate = _unDATA;
+        });
+        res.send(ObjMainDate);
+    });
+
 //--------------------------------------------------------------------- обработка запросов 
 
 

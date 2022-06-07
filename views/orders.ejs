@@ -33,7 +33,7 @@
 
         <div class="main_div">
             <div class="docRows_div">
-                <button id="_createOrder_button" class="ok_button">
+                <button id="_createOrder_button" class="ok_button" onclick="vVCreateOrder()">
                     Создать заявку
                 </button>
             </div>
@@ -111,14 +111,131 @@
                     </div>
                 </div>
                 <div style="display: flex; margin-top: 60px;">
-                    <button style="margin-right: 10px" id="_viewOrdersReport_button" class="ok_button">
+                    <button onclick="window.print()" style="margin-right: 10px" id="_viewOrdersReport_button" class="ok_button">
                         Скачать отчет
                     </button>
-                    <button style="margin-right: 10px" id="_viewOrdersDel_button" class="redButton_button">
+                    <button style="margin-right: 10px" id="_viewOrdersDel_button" class="redButton_button" onclick="vQDeleteOrders()">
                         Удалить заявку
+                    </button>
+                    <button style="margin-right: 10px" id="_viewOrdersEdit_button" class="greyButton_button" onclick="vVStartEdit()">
+                        Изменить
                     </button>
                     <button style="margin-right: 10px" id="_viewOrdersCancel_button" class="greyButton_button" onclick="vVModalWindowControll('_viewOrders_div', 'none');">
                         Закрыть
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="_editOrders_div" class="modalBack_div" style="display: none;">
+            <div class="modalWindowFront_div">
+                <div class="modalWindowHeaderRows_div">
+                    <div>
+                        <p id="_editOrdersHeader_p" class="modalWindowHeader_p">
+                            Редактировать заказ №1 
+                            <!-- 21 -->
+                        </p>
+                    </div>
+                    <div style="display: flex;">
+                        <p class="modalWindowMetaText_p">Сумма заказа на</p>
+                        <p id="_sumEdit_p" class="modalWindowInfoText_p">6 000 000</p>
+                    </div>
+                </div>
+                <div style="margin-top: 50px;">
+                    <div style="display: flex;">
+                        <div style="margin-right: 28px;">
+                            <p style="margin-top: 0px">ФИО Клиента</p>
+                            <input id="_FIOEdit_input" style="width:298px;" value="Банановый ячмень" placeholder="Введите ФИО"/>
+                        </div>
+                        <div>
+                            <p style="margin-top: 0px">Номер телефона</p>
+                            <input id="_telEdit_input" style="width:372px" value="Банановый ячмень" placeholder="Введите номер телефона"/>
+                        </div>
+                    </div>
+                    <div style="display: flex; margin-top: 28px;">
+                        <div style="margin-right: 28px;">
+                            <p style="margin-top: 0px">Продукт</p>
+                            <select id="_productEdit_select" style="width:372px">
+                                <option hidden disabled selected value>Выберите признак</option>
+                                <option>МР 1</option>
+                                <option>МР 2</option>
+                                <option selected>Банановый ячмень</option>
+                                <option>ФК 2</option>
+                            </select>
+                        </div>
+                        <div style="margin-right: 28px;">
+                            <p style="margin-top: 0px">Количество</p>
+                            <input id="_qtyEdit_input" oninput="vROnInput(this)" style="width:135px" type="number" min="1"/>
+                        </div>
+                        <div>
+                            <p style="margin-top: 0px">Цена за ед.</p>
+                            <input id="_costEdit_input" oninput="vROnInput(this)" style="width:135px" type="number" min="1"/>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; margin-top: 60px;">
+                    <button style="margin-right: 10px" id="_editOrdersOk_button" class="ok_button" onclick="vQSaveEdit()">
+                        Сохранить
+                    </button>
+                    <button style="margin-right: 10px" id="_editOrdersCancel_button" class="greyButton_button" onclick="vVModalWindowControll('_editOrders_div', 'none');">
+                        Отмена
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="_createOrders_div" class="modalBack_div" style="display: none;">
+            <div class="modalWindowFront_div">
+                <div class="modalWindowHeaderRows_div">
+                    <div>
+                        <p id="_createOrdersHeader_p" class="modalWindowHeader_p">
+                            Создать заказ №1
+                            <!-- 15 -->
+                        </p>
+                    </div>
+                    <div style="display: flex;">
+                        <p class="modalWindowMetaText_p">Сумма заказа на</p>
+                        <p id="_sumCreate_p" class="modalWindowInfoText_p">1</p>
+                    </div>
+                </div>
+                <div style="margin-top: 50px;">
+                    <div style="display: flex;">
+                        <div style="margin-right: 28px;">
+                            <p style="margin-top: 0px">ФИО Клиента</p>
+                            <input id="_FIOCreate_input" style="width:298px;" placeholder="Введите ФИО"/>
+                        </div>
+                        <div>
+                            <p style="margin-top: 0px">Номер телефона</p>
+                            <input id="_telCreate_input" style="width:372px" placeholder="Введите номер телефона"/>
+                        </div>
+                    </div>
+                    <div style="display: flex; margin-top: 28px;">
+                        <div style="margin-right: 28px;">
+                            <p style="margin-top: 0px">Продукт</p>
+                            <select id="_productCreate_select" style="width:372px">
+                                <option hidden disabled selected value>Выберите признак</option>
+                                <option>МР 1</option>
+                                <option>МР 2</option>
+                                <option selected>Банановый ячмень</option>
+                                <option>ФК 2</option>
+                            </select>
+                        </div>
+                        <div style="margin-right: 28px;">
+                            <p style="margin-top: 0px" placeholder="Кол-во">Количество</p>
+                            <input id="_qtyCreate_input" oninput="vROnInput(this)" style="width:135px" value="1" type="number" min="1"/>
+                        </div>
+                        <div>
+                            <p style="margin-top: 0px" placeholder="Цена">Цена за ед.</p>
+                            <input id="_costCreate_input" oninput="vROnInput(this)" style="width:135px" value="1" type="number" min="1"/>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; margin-top: 60px;">
+                    <button style="margin-right: 10px" id="_createOrdersOk_button" class="ok_button" onclick="vQSaveCreate()">
+                        Сохранить
+                    </button>
+                    <button style="margin-right: 10px" id="_createOrdersCancel_button" class="greyButton_button" onclick="vVModalWindowControll('_createOrders_div', 'none');">
+                        Отмена
                     </button>
                 </div>
             </div>
