@@ -229,6 +229,35 @@ select:focus {
     background-color: #b3b3b3;
 }
 
+.white_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    padding: 12px 27px;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+.white_button:hover {
+    background-color: #f5f5f5;
+}
+
+.white_button:focus {
+    outline: none !important;
+    border: 1px solid #eeeeee;
+}
+
+.white_button:active {
+    background-color: #ececec;
+}
+
 .userRoleName_p {
     margin: 0px;
     font-family: 'Roboto Flex', sans-serif;
@@ -281,6 +310,7 @@ select:focus {
 .selectVklad_p {
     margin: 0px;
     padding: 15px;
+    margin-top: 6px;
     font-size: 18px;
     background: #eceef3;
     width: 220px;
@@ -485,7 +515,7 @@ select {
 
 @media print {
     /* здесь будут стили для печати */
-    .ok_button, .greyButton_button, .redButton_button {
+    .ok_button, .greyButton_button, .redButton_button, .white_button {
         display: none;
         z-index: -1;
     }

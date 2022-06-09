@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="rus">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/img/icon.png" type="image/png">
+        <link rel="stylesheet" type="text/css" href="/css/StyleSheet.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap" rel="stylesheet">
+        <title>Производство</title>
+        <script src="/js/productionScript.js"></script>
+    </head>
+
+    <body style="align-items: flex-start;" onload="vRLoadBody()">
+        <div class="menu_div">
+            <img src="/img/Daimler.png" class="logoInPanel_img"/>
+            <div class="menuButtons_div">
+                <p class="vklad_p" onclick="vVNavigate(this)">Заказы</p>
+                <p class="vklad_p" onclick="vVNavigate(this)">Склад</p>
+                <p class="selectVklad_p"">Производство</p>
+            </div>
+            <div class="userInfo_div">
+                <img src="/img/Ava.png" class="ava_img"/>
+                <div>
+                    <p class="userName_p"><%= str_Name %> <%= str_Surname %></p>
+                    <p id="_userRoleName_p" class="userRoleName_p"><%= str_RoleName %></p>
+                    <p id="_userRoleId_p" style="display:none"> <%= str_RoleId %> </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_div">
+            <div class="docRows_div">
+                <div class="table_div" id="_table_div">
+                    <div class="tableScroll_div">
+                        <table id="_table_table">
+                            <tr><td>пусто</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="_modalBack_div" class="modalBack_div" style="display: none;">
+            <div class="modalFront_div">
+                <p id="_loadingLabel_p" class="loadingLabel_p">Подождите, думаем...</p>
+            </div>
+        </div>
+        <div id="_queryErrorBack_div" class="modalBack_div" style="display: none;">
+            <div class="queryErrorFront_div">
+                <p id="_queryErrorLabel_p" class="queryErrorLabel_p">Во время выполнения запроса произошла ошибка</p>
+            </div>
+        </div>
+        <div id="_anyErrorBack_div" class="modalBack_div" style="display: none;">
+            <div class="anyErrorFront_div">
+                <p id="_anyErrorHeader_p" class="anyErrorHeader_p">Ошибка!</p>
+                <p id="_anyErrorLabel_p" class="anyErrorLabel_p">Произошла неизвестная ошибка! Пожалуйста проверьте соединение с интернетом.</p>
+                <button id="_anyErrorCancel_button" class="redButton_button">
+                    Отмена
+                </button>
+            </div>
+        </div>
+    </body>
+</html>
+
+ 

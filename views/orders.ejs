@@ -18,8 +18,8 @@
             <img src="/img/Daimler.png" class="logoInPanel_img"/>
             <div class="menuButtons_div">
                 <p class="selectVklad_p">Заказы</p>
-                <p class="vklad_p">Склад</p>
-                <p class="vklad_p">Производство</p>
+                <p class="vklad_p" onclick="vVNavigate(this)">Склад</p>
+                <p class="vklad_p" onclick="vVNavigate(this)">Производство</p>
             </div>
             <div class="userInfo_div">
                 <img src="/img/Ava.png" class="ava_img"/>
@@ -32,9 +32,12 @@
         </div>
 
         <div class="main_div">
-            <div class="docRows_div">
+            <div class="docRows_div" style="display: flex;justify-content: space-between;width: 62vw;">
                 <button id="_createOrder_button" class="ok_button" onclick="vVCreateOrder()">
                     Создать заявку
+                </button>
+                <button class="white_button" onclick="vVOpenReport()">
+                    Отчет
                 </button>
             </div>
             <div class="docRows_div">

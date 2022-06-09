@@ -33,35 +33,6 @@ function vRLoadBody() {
 }
 
 function vVRole(){
-    var _elRole = document.getElementById("_userRoleId_p");
-    var _strRoleId = _elRole.innerText.trim();
-
-    var _elCreateOrdersButton = document.getElementById("_createOrder_button");
-    var _viewOrdersEditButton = document.getElementById("_viewOrdersEdit_button");
-    var _viewOrdersDelButton = document.getElementById("_viewOrdersDel_button");
-
-    switch(_strRoleId) {
-        case "0":
-            _elCreateOrdersButton.style.display = "flex";
-            _viewOrdersEditButton.style.display = "flex";
-            _viewOrdersDelButton.style.display = "flex";
-        break;
-        case "1":
-            _elCreateOrdersButton.style.display = "none";
-            _viewOrdersEditButton.style.display = "none";
-            _viewOrdersDelButton.style.display = "none";
-        break;
-        case "2":
-            _elCreateOrdersButton.style.display = "flex";
-            _viewOrdersEditButton.style.display = "flex";
-            _viewOrdersDelButton.style.display = "flex";
-        break;
-        case "3":
-            _elCreateOrdersButton.style.display = "none";
-            _viewOrdersEditButton.style.display = "none";
-            _viewOrdersDelButton.style.display = "none";
-        break;
-    }
 }
 
 function vVModalWindowControll(strModalId, strDisplayType) {
@@ -364,21 +335,6 @@ function vQSaveCreate(){
   xhttp.open("GET", encodeURI( HOST_URL + "updateAddOrder" + _strParams ));
   // xhttp.setRequestHeader("Authorization", "Bearer " + userToken);
   xhttp.send();
-}
-
-function vVOpenReport(){
-  document.location.href = HOST_URL + "ordersReport";
-}
-
-function vVNavigate(el){
-  switch(el.innerText) {
-    case "Склад":
-      document.location.href = HOST_URL + "warehouse?token=" + StrUserToken;
-    break;
-    case "Производство":
-      document.location.href = HOST_URL + "production?token=" + StrUserToken;
-    break;
-  }
 }
 
 
